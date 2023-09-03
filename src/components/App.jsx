@@ -24,15 +24,6 @@ export const App = () => {
   
 
   useEffect(() => {
-    const handleFormOnSubmit = (searchWord) => {
-      setSearchWord(searchWord);
-      setImages([]);
-      setPage(1);
-      setTotalPages(1);
-      setShowLoader(false);
-      setError(null);
-      setModalURL('');
-    };
 
     if (searchWord) {
       const fetchData = async () => {
@@ -76,7 +67,15 @@ export const App = () => {
     }
   }, [searchWord, page]);
 
-   
+  const handleFormOnSubmit = (searchWord) => {
+    setSearchWord(searchWord);
+    setImages([]);
+    setPage(1);
+    setTotalPages(1);
+    setShowLoader(false);
+    setError(null);
+    setModalURL('');
+  };
 
   const onImageClick = (url) => {
     setModalURL(url);
