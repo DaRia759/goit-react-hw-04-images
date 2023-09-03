@@ -19,7 +19,7 @@ export const App = () => {
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [showLoader, setShowLoader] = useState(false);
-  const [error, setError] = useState(null);
+  // const [error, setError] = useState(null);
   const [modalURL, setModalURL] = useState('');
   
 
@@ -56,7 +56,7 @@ export const App = () => {
 
           setImages((prevImages) => [...prevImages, ...hits]);
         } catch (error) {
-          setError(error.message);
+          // setError(error.message);
           toast.error(`Error occured ${error}`)
         } finally {
           setShowLoader(false)
@@ -73,7 +73,7 @@ export const App = () => {
     setPage(1);
     setTotalPages(1);
     setShowLoader(false);
-    setError(null);
+    // setError(null);
     setModalURL('');
   };
 
