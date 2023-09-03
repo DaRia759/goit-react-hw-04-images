@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import PropTypes from 'prop-types';
 import css from './App.module.css';
 import SearchBar from './SearchBar/Searchbar';
 import { ToastContainer, toast } from "react-toastify";
@@ -67,7 +66,7 @@ export const App = () => {
           setImages((prevImages) => [...prevImages, ...hits]);
         } catch (error) {
           setError(error.message);
-          toast.error(`Error occured ${error.message}`)
+          toast.error(`Error occured ${error}`)
         } finally {
           setShowLoader(false)
         }
@@ -92,7 +91,6 @@ export const App = () => {
             setPage((prevState) => prevState.page + 1);
         }
   };
-
 
   const isLoadMoreDisabled = !images.length && searchWord === '';
 
